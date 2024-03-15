@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "*"
+        "https://physicsmathcode.aboba.dev"
 ]
 
 app.add_middleware(

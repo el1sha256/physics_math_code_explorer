@@ -3,7 +3,7 @@ version: '2.2'
 services:
   manticore:
     container_name: manticore
-    image: manticoresearch/manticore
+    image: manticoresearch/manticore:6.0.4
     environment:
       - EXTRA=1
     restart: always
@@ -18,8 +18,8 @@ services:
       memlock:
         soft: -1
         hard: -1
-    volumes:
-      - ./data:/var/lib/manticore
+          #    volumes:
+          #- ./data:/var/lib/manticore
 
   backend:
     env_file:
@@ -30,5 +30,7 @@ services:
     command: uvicorn main:app --host 0.0.0.0
     ports:
       - "8090:8000"
+    depends_on:
+      - manticore
 
 #      - ./manticore.conf:/etc/manticoresearch/manticore.conf # uncomment if you use a custom config
