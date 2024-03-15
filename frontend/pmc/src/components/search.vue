@@ -44,7 +44,6 @@ export default {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': '*'
           },
           body: JSON.stringify({"tolerance": 0, "query": this.searchQuery})
         });
