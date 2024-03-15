@@ -1,0 +1,8 @@
+messages-copy.json
+messages.json
+anon.session
+name.session
+data
+.env
+frontend/pmc/node_modules
+*.vscode
