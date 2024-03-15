@@ -20,7 +20,7 @@ app.add_middleware(
 )
 @app.on_event("startup")
 async def startup():
-    with open("../messages.json", "r") as messages_file:
+    with open("./messages.json", "r") as messages_file:
         posts = json.loads(messages_file.read())
         assert init_db(posts)
 
